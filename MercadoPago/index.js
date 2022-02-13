@@ -49,6 +49,10 @@ app.get('/pagar', async (req, res)=>{
     var pagamento = await mercadoPago.preferences.create(dados);
     console.log(pagamento);
 
+    //Quando realizamos um pagamento, temos que ir no banco de dados e
+    //salvar o pagamento , neste caso é ficticio
+    // ex: Banco.SalvarPagamento({id: id, pagador: emailPagador})
+
     //url de pagamentos
     return res.redirect(pagamento.body.init_point);
         
